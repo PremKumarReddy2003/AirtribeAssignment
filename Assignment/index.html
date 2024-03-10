@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Task Manager</h1>
+    <div class="status-container">
+      <div class="status" id="not-started">
+        <h2>Not Started <span class="count">0</span></h2>
+        <ul class="task-list" data-status="not-started"></ul>
+        <button class="add-task">+ New</button>
+      </div>
+      <div class="status" id="in-progress">
+        <h2>In Progress <span class="count">0</span></h2>
+        <ul class="task-list" data-status="in-progress"></ul>
+        <button class="add-task">+ New</button>
+      </div>
+      <div class="status" id="completed">
+        <h2>Completed <span class="count">0</span></h2>
+        <ul class="task-list" data-status="completed"></ul>
+        <button class="add-task">+ New</button>
+      </div>
+    </div>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <h2>Task Details</h2>
+        <form id="task-form">
+          <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title">
+          </div>
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="status">Status:</label>
+            <select id="status" name="status">
+              <option value="not-started">Not Started</option>
+              <option value="in-progress">In Progress</option>
+              <option value="completed">Completed</option>
+            </select>
+          </div>
+          <div class="button-group">
+            <button type="submit">Save</button>
+            <button type="button" id="delete-task">Delete</button>
+          </div>
+        </form>
+        <button type="button" id="close-modal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
